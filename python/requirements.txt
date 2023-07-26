@@ -1,0 +1,5 @@
+# google cloud lib
+google-cloud-bigquery
+
+# 
+psycopg2

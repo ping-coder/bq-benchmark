@@ -2,8 +2,7 @@ from google.cloud import bigquery
 import time
 
 # Initialize a BigQuery client with specific configuration file and connection pool size
-# client = bigquery.Client.from_service_account_json('~/keys/tencent-sharkmob.json')
-client = bigquery.Client()
+client = bigquery.Client.from_service_account_json(os.path.expanduser('~')+'/keys/peace-workspace-computer.json')
 
 # Define your query
 query1 = (

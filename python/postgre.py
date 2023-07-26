@@ -57,6 +57,26 @@ print("Number of rows in returned data:", row_count)
 # Print the query time
 print("PG Query2 time - 1000 rows table: ", query_time, "seconds")
 
+# Define your query
+query3 = (
+    "select * from t_user_stat limit 10000; "
+)
+
+# Run the query and measure the time
+start_time = time.time()
+cursor.execute(query3)
+end_time = time.time()
+query_time = end_time - start_time
+
+# Print the number of rows in the returned data
+row_count = 0
+for row in cursor.fetchall():
+    row_count += 1
+print("Number of rows in returned data:", row_count)
+
+# Print the query time
+print("PG Query3 time - 10000 rows table: ", query_time, "seconds")
+
 # Close the connection
 cursor.close()
 conn.close()
